@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooover/src/pages/register.dart';
 
 class SignInPage extends StatefulWidget{
   @override
@@ -91,7 +92,12 @@ class _SignInPageState extends State<SignInPage>{
               children: <Widget>[
                 Text("Don't have an account?", style: TextStyle(color: Color(0xFFBDC2CB), fontWeight: FontWeight.bold, fontSize: 18.0),),
                 SizedBox(width: 10.0,),
-                Text("Register", style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 18.0),)
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => RegisterPage()));
+                  },
+                  child: Text("Register", style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 18.0),)
+                ),
               ],
             )
           ],
