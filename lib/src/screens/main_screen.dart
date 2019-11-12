@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:fooover/src/scoped-model/food_model.dart';
 import '../pages/home_page.dart';
 import '../pages/order_page.dart';
 import '../pages/favorite_page.dart';
 import '../pages/profile_page.dart';
 
 class MainScreen extends StatefulWidget{
+   FoodModel foodModel;
+
+   MainScreen({this.foodModel});
+  
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -24,6 +28,8 @@ class _MainScreenState extends State<MainScreen>{
   @override
   void initState() {
     // TODO: implement initState
+    //Fetch the data from the DB
+    widget.foodModel.fetchFood();
     super.initState();
     homePage = HomePage();
     orderPage = OrderPage();
